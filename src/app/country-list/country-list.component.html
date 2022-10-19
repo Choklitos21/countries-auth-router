@@ -1,0 +1,9 @@
+<div>
+
+  <ul>
+    <li *ngFor="let country of countries; let i = index" class="animate__animated animate__fadeInLeft animate__slow">
+      <img [src]="country.flags.svg" alt=""> {{country.name.common}}
+    </li>
+  </ul>
+
+</div>

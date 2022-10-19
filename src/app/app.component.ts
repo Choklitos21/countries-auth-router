@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'router-auth';
+
+  flag: boolean = false;
+
+  auth() {
+    this.flag = true;
+  }
+
+  logOut() {
+    this.flag = false;
+  }
+
 }

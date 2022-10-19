@@ -1,0 +1,19 @@
+div {
+  text-align: left;
+  display: grid;
+  place-items: center;
+}
+
+img {
+  width: 30px;
+}
+
+ul {
+  display: grid;
+  grid: repeat(1, 1fr) / repeat(3, 1fr);
+  gap: 0 50px;
+}
+
+li {
+  list-style-type: none;
+}
