@@ -1,14 +1,41 @@
-<div class="buttons-container">
+<div class="container">
 
-  <button (click)="auth()">Authenticate</button>
-  <button (click)="logOut()">Log out</button>
-  <hr>
-  <button routerLink="">Get back</button>
+  <div>
+    <div class="buttons-container">
+
+      <button (click)="auth()">Authenticate</button>
+      <button (click)="logOut()">Log out</button>
+      <br>
+      <button routerLink="">Get back</button>
+
+    </div>
+  </div>
+
+  <div>
+
+    <form #countriesForm="ngForm" class="form-container">
+      <div class="form-container__inputs-container">
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" [(ngModel)]="form.name">
+      </div>
+
+      <div class="form-container__inputs-container">
+        <label for="last_name">Last name</label>
+        <input id="last_name" type="text" name="last_name" [(ngModel)]="form.capital">
+      </div>
+
+      <div class="buttons-container">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+
+  </div>
 
 </div>
 
 
-<div *ngIf="flag">
+
+<div *ngIf="flag" class="flags-container">
 
   <ul>
     <li *ngFor="let country of countries; let i = index" class="animate__animated animate__fadeInLeft animate__slow">

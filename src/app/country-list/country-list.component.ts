@@ -9,6 +9,11 @@ import {Country} from "../interfaces/countries.interface";
 })
 export class CountryListComponent implements OnInit {
 
+  form = {
+    name: '',
+    capital: ''
+  }
+
   flag: boolean = false;
 
   auth() {
