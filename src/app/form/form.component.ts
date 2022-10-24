@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
+  myForm = {
+    first_name: '',
+    last_name: ''
+  }
+
   constructor() { }
 
   ngOnInit(): void {

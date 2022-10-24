@@ -5,12 +5,12 @@
 <form (ngSubmit)="onSubmit(contactForm.value)" action="" #contactForm="ngForm" class="form-container">
   <div class="form-container__inputs-container">
     <label for="first_name">Name</label>
-    <input id="first_name" type="text" name="first_name" ngModel>
+    <input id="first_name" type="text" name="first_name" [(ngModel)]="myForm.first_name">
   </div>
 
   <div class="form-container__inputs-container">
     <label for="last_name">Last name</label>
-    <input id="last_name" type="text" name="last_name" ngModel>
+    <input id="last_name" type="text" name="last_name" [(ngModel)]="myForm.last_name">
   </div>
 
   <div>
@@ -19,5 +19,5 @@
 </form>
 
 <pre>
-  {{contactForm.value | json}}
+  {{myForm | json}}
 </pre>
