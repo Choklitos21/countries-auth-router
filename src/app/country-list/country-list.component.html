@@ -1,4 +1,14 @@
-<div>
+<div class="buttons-container">
+
+  <button (click)="auth()">Authenticate</button>
+  <button (click)="logOut()">Log out</button>
+  <hr>
+  <button routerLink="">Get back</button>
+
+</div>
+
+
+<div *ngIf="flag">
 
   <ul>
     <li *ngFor="let country of countries; let i = index" class="animate__animated animate__fadeInLeft animate__slow">

@@ -1,21 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountryListComponent } from './country-list/country-list.component';
 import {InterceptorInterceptor} from "./interceptors/interceptor.interceptor";
-import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { FormComponent } from './form/form.component';
+import { HomeComponent } from './home/home.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
-    CountryListComponent
+    CountryListComponent,
+    FormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     {

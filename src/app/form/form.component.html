@@ -1,0 +1,23 @@
+<div class="get-back">
+  <button routerLink="">Get back</button>
+</div>
+
+<form (ngSubmit)="onSubmit(contactForm.value)" action="" #contactForm="ngForm" class="form-container">
+  <div class="form-container__inputs-container">
+    <label for="first_name">Name</label>
+    <input id="first_name" type="text" name="first_name" ngModel>
+  </div>
+
+  <div class="form-container__inputs-container">
+    <label for="last_name">Last name</label>
+    <input id="last_name" type="text" name="last_name" ngModel>
+  </div>
+
+  <div>
+    <button type="submit">Send</button>
+  </div>
+</form>
+
+<pre>
+  {{contactForm.value | json}}
+</pre>

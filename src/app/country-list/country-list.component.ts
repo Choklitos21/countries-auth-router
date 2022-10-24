@@ -9,6 +9,16 @@ import {Country} from "../interfaces/countries.interface";
 })
 export class CountryListComponent implements OnInit {
 
+  flag: boolean = false;
+
+  auth() {
+    this.flag = true;
+  }
+
+  logOut() {
+    this.flag = false;
+  }
+
   countries: Country[] = [];
 
   constructor(

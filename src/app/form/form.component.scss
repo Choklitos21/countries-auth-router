@@ -1,0 +1,25 @@
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.form-container {
+  margin-top: 50px;
+  display: grid;
+  place-items: center;
+  gap: 20px;
+
+  font-size: 20px;
+
+  & label {
+    margin-right: 5px;
+  }
+
+  & input {
+    color: black;
+    font-size: 17px;
+    height: 20px;
+  }
+}

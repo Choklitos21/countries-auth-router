@@ -7,14 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  flag: boolean = false;
-
-  auth() {
-    this.flag = true;
-  }
-
-  logOut() {
-    this.flag = false;
-  }
-
 }
