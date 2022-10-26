@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CountriesService} from "../services/countries.service";
 import {Country} from "../interfaces/countries.interface";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-country-list',
@@ -12,8 +13,8 @@ export class CountryListComponent implements OnInit {
   countryArray: {name: string, capital:string}[] = []
 
   newCountry = {
-    name: '',
-    capital: ''
+    name: 'Canadá',
+    capital: 'Ottawa'
   }
 
   flag: boolean = false;
@@ -25,6 +26,10 @@ export class CountryListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    console.log(this.newCountry);
+    this.newCountry.name = 'Italia';
+    this.newCountry.capital = 'Roma';
+
     this.countryService.getCountries()
       .subscribe({
         next: data => this.countries = data
@@ -32,10 +37,18 @@ export class CountryListComponent implements OnInit {
   }
 
   saveCountry(value: any) {
-    console.log(value);
     this.newCountry.name = value.name;
     this.newCountry.capital = value.capital + ' City';
-    this.countryArray.push(this.newCountry)
+    let data = {
+      name: this.newCountry.name,
+      capital: this.newCountry.capital
+    }
+    console.log(this.newCountry);
+
+    this.countryArray.push(data);
+    this.newCountry.name = '';
+    this.newCountry.capital = '';
+
   }
 
   auth() {
@@ -45,6 +58,5 @@ export class CountryListComponent implements OnInit {
   logOut() {
     this.flag = false;
   }
-
 
 }

@@ -16,16 +16,18 @@
     <form (ngSubmit)="saveCountry(newCountryForm.value)" #newCountryForm="ngForm" class="form-container">
       <div class="form-container__inputs-container">
         <label for="name">Country name</label>
-        <input id="name" type="text" name="name" placeholder="Insert country name" ngModel>
+        <input id="name" type="text" name="name" placeholder="Insert country name" #name="ngModel" required [(ngModel)]="newCountry.name">
+        <small [hidden]="name.valid || !name.dirty">Field required</small>
       </div>
 
       <div class="form-container__inputs-container">
         <label for="capital">Country capital</label>
-        <input id="capital" type="text" name="capital" placeholder="Insert capital name" ngModel>
+        <input id="capital" type="text" name="capital" placeholder="Insert capital name" #capital="ngModel" required [(ngModel)]="newCountry.capital">
+        <small [hidden]="capital.valid || capital.pristine">Invalid entry</small>
       </div>
 
       <div class="buttons-container">
-        <button type="submit">Save country</button>
+        <button type="submit" [disabled]="newCountryForm.form.invalid">Save country</button>
       </div>
     </form>
 
