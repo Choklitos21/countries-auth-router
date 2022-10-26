@@ -9,20 +9,14 @@ import {Country} from "../interfaces/countries.interface";
 })
 export class CountryListComponent implements OnInit {
 
-  form = {
+  countryArray: {name: string, capital:string}[] = []
+
+  newCountry = {
     name: '',
     capital: ''
   }
 
   flag: boolean = false;
-
-  auth() {
-    this.flag = true;
-  }
-
-  logOut() {
-    this.flag = false;
-  }
 
   countries: Country[] = [];
 
@@ -35,6 +29,21 @@ export class CountryListComponent implements OnInit {
       .subscribe({
         next: data => this.countries = data
       })
+  }
+
+  saveCountry(value: any) {
+    console.log(value);
+    this.newCountry.name = value.name;
+    this.newCountry.capital = value.capital + ' City';
+    this.countryArray.push(this.newCountry)
+  }
+
+  auth() {
+    this.flag = true;
+  }
+
+  logOut() {
+    this.flag = false;
   }
 
 

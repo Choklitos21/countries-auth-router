@@ -13,19 +13,19 @@
 
   <div>
 
-    <form #countriesForm="ngForm" class="form-container">
+    <form (ngSubmit)="saveCountry(newCountryForm.value)" #newCountryForm="ngForm" class="form-container">
       <div class="form-container__inputs-container">
-        <label for="name">Name</label>
-        <input id="name" type="text" name="name" [(ngModel)]="form.name">
+        <label for="name">Country name</label>
+        <input id="name" type="text" name="name" placeholder="Insert country name" ngModel>
       </div>
 
       <div class="form-container__inputs-container">
-        <label for="last_name">Last name</label>
-        <input id="last_name" type="text" name="last_name" [(ngModel)]="form.capital">
+        <label for="capital">Country capital</label>
+        <input id="capital" type="text" name="capital" placeholder="Insert capital name" ngModel>
       </div>
 
       <div class="buttons-container">
-        <button type="submit">Send</button>
+        <button type="submit">Save country</button>
       </div>
     </form>
 
@@ -33,7 +33,17 @@
 
 </div>
 
+<div *ngIf="countryArray">
 
+  <h2>Paises array task 3 / Angular 4 (Formularios)</h2>
+
+  <ul>
+    <li *ngFor="let x of countryArray">
+      Pais: {{x.name}}<br>
+      Capital: {{x.capital}}
+    </li>
+  </ul>
+</div>
 
 <div *ngIf="flag" class="flags-container">
 

@@ -31,9 +31,10 @@
     background: rgba(148, 99, 240, 0.44);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.1px);
+    backdrop-filter: blur(6.1px);
     -webkit-backdrop-filter: blur(8.1px);
     border: 1px solid rgba(148, 99, 240, 1);
+    color: white;
   }
 
 }
@@ -51,12 +52,16 @@
     margin-right: 5px;
   }
 
-  & input {
-    color: black;
-    font-size: 17px;
-    height: 20px;
+  &__inputs-container {
+
+    & input {
+      border-radius: 5px;
+      color: black;
+      font-size: 17px;
+      height: 20px;
+    }
   }
-  
+
 }
 
 .container {
