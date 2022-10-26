@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CountriesService} from "../services/countries.service";
 import {Country} from "../interfaces/countries.interface";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-country-list',

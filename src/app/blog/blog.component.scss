@@ -1,0 +1,53 @@
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.buttons-container {
+  width: 100%;
+  margin: 20px 0 20px;
+
+  & button {
+    width: 200px;
+    height: 40px;
+    background: rgba(148, 99, 240, 0.44);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.1px);
+    -webkit-backdrop-filter: blur(8.1px);
+    border: 1px solid rgba(148, 99, 240, 1);
+    color: white;
+  }
+
+}
+
+.form-container {
+  margin-top: 50px;
+  display: grid;
+  place-items: start;
+
+
+  font-size: 20px;
+
+  & label {
+    margin-right: 5px;
+  }
+
+  &__inputs-container {
+
+    & input {
+      border-radius: 5px;
+      color: black;
+      font-size: 17px;
+      height: 20px;
+    }
+
+    & textarea {
+      border-radius: 5px;
+      color: black;
+      font-size: 17px;
+    }
+  }
+
+}
+

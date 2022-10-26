@@ -1,0 +1,32 @@
+<div class="container">
+
+  <form (ngSubmit)="saveBlog(blogForm.value)" #blogForm="ngForm" class="form-container">
+    <div class="form-container__inputs-container">
+      <label for="id">Id</label>
+      <input id="id" type="number" name="id" placeholder="Insert the id" #id="ngModel" required ngModel>
+      <small [hidden]="id.valid || !id.dirty">Field required</small>
+    </div>
+
+    <div class="form-container__inputs-container">
+      <label for="title">Title</label>
+      <input id="title" name="title"  placeholder="Insert the title" #title="ngModel" required ngModel>
+      <small [hidden]="title.valid || !title.dirty">Field required</small>
+    </div>
+
+    <div class="form-container__inputs-container">
+      <label for="body">Body</label>
+      <textarea id="body" type="text" name="body" rows="5" cols="33" placeholder="Text area" #body="ngModel" required ngModel>
+      </textarea>
+      <small [hidden]="body.valid || body.pristine">Invalid entry</small>
+    </div>
+
+    <div class="buttons-container">
+      <button type="submit" [disabled]="blogForm.form.invalid">Save entry</button>
+    </div>
+  </form>
+
+</div>
+
+<div *ngIf="blog">
+  {{blog | json}}
+</div>
